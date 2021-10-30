@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esainoblt | Route Search</title>
+</head>
+<body>
+    <div class="logo"><img src={% static 'route/images/logo.png' %}></div>
+    <div class="search_bar">
+        <h3>검색어: <strong>{{ query }}</strong></h3>
+        <img src="{% static 'search/images/search_icon.svg' %}">
+    </div>
+    {% for route in routes %}
+    <div class="search_result">
+        <a href="/route/{{route.id}}">{{route.via}}</a>
+    </div>
+
+    {% empty %}
+        <h5>검색 결과가 없습니다.</h5>
+
+    {% endfor %}
+</body>
+</html>

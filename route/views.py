@@ -8,7 +8,7 @@ def main(request):
 
 
 def routeBoard(request):
-    route = Route.objects
+    route = Route.objects.all()
     return render(request, 'route/routeBoard.html', {'routes': route})
 
 
