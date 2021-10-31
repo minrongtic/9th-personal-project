@@ -21,7 +21,7 @@
     <div class="search_bar">
         <div class="greeting">
             {% if user.is_authenticated %}
-                <p>⋆⁺₊⋆ 안녕하세요, {{user.username}}님! ☾⋆⁺₊⋆<br>
+                <p>⋆⁺₊⋆ 안녕하세요, {{user.nickname}}님! ☾⋆⁺₊⋆<br>
                     각 건물 간의 최단 이동 방법을 알려드리겠습니다.</p>
             {% else %}
                 <p>로그인 후 이용하실 수 있습니다.</p>
