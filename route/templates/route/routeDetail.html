@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esainbolt | Route Detail</title>
+</head>
+<body>
+    <div class="logo"><img src={% static 'route/images/logo.png' %}></div>
+    <div class="fin">
+        <h2>도착지: {{route.fin}}</h2>
+    </div>
+    <div class="via">
+        <p>가는 방법: {{route.via}}</p>
+    </div>
+    <div class="etc">
+        <p>비고: {{route.etc|linebreaks}}</p>
+    </div>
+</body>
+</html>
