@@ -11,8 +11,11 @@
     <div class="logo"><img src={% static 'route/images/logo.png' %}></div>
     {% for community in communities.all %}
     <div class="title">
-        <a href="{% url 'communityDetail' community.id %}">{{community.title}}</a>
+        <a href="{% url 'community:communityDetail' community.id %}">{{community.title}}</a>
     </div>
     {% endfor %}
+    <br>
+    <br>
+    <a href="{% url 'community:communityNew' %}">글 쓰기</a>
 </body>
 </html>

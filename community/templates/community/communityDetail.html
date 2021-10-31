@@ -19,5 +19,9 @@
     <div class="body">
         <p>{{community.body}}</p>
     </div>
+    <br>
+    <br>
+    <a href="{% url 'community:communityEdit' community.id %}">수정하기</a>
+    <a href="{% url 'community:communityDelete' community.id %}">삭제하기</a>
 </body>
 </html>
