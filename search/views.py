@@ -7,11 +7,11 @@ from django.db.models import Q, query
 def searchResult(request):
     query = request.GET.get('kw')
     routes = Route.objects.all()
-
+    routes_list = Route.objects.filter(
+        Q(fin__icontains=query) | Q(via__icontains=query)).distinct()
     context = dict()
     context['query'] = query
     context['routes'] = routes
+    context['routes_list'] = routes_list
 
-    if query:
-        routes.filter(Q(fin__icontains=query) | Q(via__icontains=query))
     return render(request, 'search/search.html', context=context)
