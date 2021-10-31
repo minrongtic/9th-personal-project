@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'route.apps.RouteConfig',
     'search.apps.SearchConfig',
     'community.apps.CommunityConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Auth settings
+AUTH_USER_MODEL = "accounts.User"
 
+# Secret Key settings
 secret_file = os.path.join(BASE_DIR, 'secrets.json')  # secrets.json 파일 위치를 명시
 
 with open(secret_file) as f:
