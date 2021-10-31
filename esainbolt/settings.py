@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'route.apps.RouteConfig',
     'search.apps.SearchConfig',
+    'community.apps.CommunityConfig',
 ]
 
 MIDDLEWARE = [

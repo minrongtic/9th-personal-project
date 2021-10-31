@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esainbolt | Community Board</title>
+</head>
+<body>
+    <div class="logo"><img src={% static 'route/images/logo.png' %}></div>
+    {% for community in communities.all %}
+    <div class="title">
+        <a href="{% url 'communityDetail' community.id %}">{{community.title}}</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
