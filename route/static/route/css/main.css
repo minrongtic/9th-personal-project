@@ -1,0 +1,40 @@
+@font-face {
+    font-family: SF-Pro-Rounded-Regular;
+    src: url('../fonts/SF-Pro-Rounded-Regular.otf');
+
+}
+
+.logo img {
+    display: block;
+    margin: -110px auto;
+    object-fit:contain;
+    width: 830px;
+    height: 780px;
+}
+
+.greeting p {
+    text-align: center;
+}
+
+.form-control me-2 {
+    display: block;
+    margin: 0 auto;
+}
+
+.form-control me-2::-webkit-input-placeholder {
+    text-align: center;
+    font-size:80px;
+}
+
+.campus-map img {
+    display: block;
+    margin: 50px auto;
+    object-fit:contain;
+    width:800px;
+    height:730px;
+}
+
+.greeting p {
+    font-family: SF-Pro-Rounded-Regular;
+    font-size: 23px;
+}
