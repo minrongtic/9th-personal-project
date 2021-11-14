@@ -4,7 +4,7 @@
     <title>Esainbolt | Route Search</title>
 {% endblock title %}
 {% block body-content %}
-<div class="px-4 mt-0 mb-5 text-center">
+<div class="px-4 mt-1 mb-5 text-center">
     <h1 class="display-6">검색어: <strong>{{ query }}</strong></h1>
 </div>
     {% if routes_list %}
@@ -26,7 +26,7 @@
     </div>
     {% endfor %}
     {% elif query %}
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <div class="px-4 pt-2 my-2 text-center">
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">검색 결과가 없습니다.</p>
         </div>
