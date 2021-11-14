@@ -4,36 +4,44 @@
     <title>Esainbolt | Community Detail</title>
 {% endblock title %}
 {% block body-content %}
-    <div class="title">
-        <h2>{{community.title}}</h2>
+
+<div class="row g-5">
+    <div class="mx-auto mt-5 col-md-10">
+        <h5><div class="badge rounded-pill bg-secondary text-wrap mb-2 py-1.5">
+            Esainbolt | Community
+        </h5>
+        <article class="blog-post">
+            <h2 class="blog-post-title">{{community.title}}</h2>
+            <p class="blog-post-meta fs-6 fst-italic">{{community.date.date}}, {{community.date.time}}</p>
+            <hr>
+            <p class="fs-6 py-3">{{community.body}}</p>
+        </article>
+        <hr>
+        <div class="py-2">
+        <button class="btn btn-outline-success btn-md" type="button" onclick="location.href='{% url 'community:communityEdit' community.id %}'">수정하기</button>
+        <button class="btn btn-success btn-md" type="button" onclick="location.href='{% url 'community:communityDelete' community.id %}'">삭제하기</button>
+        </div>
     </div>
-    <div class="date-time">
-        <h5>{{community.date.date}}</h5>
-        <h5>{{community.date.time}}</h5>
-    </div>
-    <div class="body">
-        <p>{{community.body}}</p>
-    </div>
-    <br>
-    <br>
-    <a href="{% url 'community:communityEdit' community.id %}">수정하기</a>
-    <a href="{% url 'community:communityDelete' community.id %}">삭제하기</a>
+</div>
+
 
 <!-- 라이브리 시티 설치 코드 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC81NDcwMC8zMTE3MQ==">
-<script type="text/javascript">
-    (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-    
-        if (typeof LivereTower === 'function') { return; }
-    
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-    
-        e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-</script>
+<div class="mx-auto col-md-10">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NDcwMC8zMTE3MQ==">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+        
+            if (typeof LivereTower === 'function') { return; }
+        
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+        
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    </div>
 </div>
 <!-- 시티 설치 코드 끝 -->
 

@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 def communityBoard(request):
-    community = Community.objects.all()
+    community = Community.objects.order_by('-date')
     return render(request, 'community/communityBoard.html', {'communities': community})
 
 

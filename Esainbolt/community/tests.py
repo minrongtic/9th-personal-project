@@ -53,3 +53,32 @@ from django.test import TestCase
 #             </div>
 #         </div>
 #     </nav>
+
+
+# communityBoard
+
+    {% for community in communities.all % }
+    <div class = "title" >
+        <a href = "{% url 'community:communityDetail' community.id %}" > {{community.title}} < /a >
+    </div >
+    {% endfor % }
+    <br >
+    <br >
+    <a href = "{% url 'community:communityNew' %}" > 글 쓰기 < /a >
+{% endblock body-content % }
+
+# community Detail
+<div class = "title" >
+        <h2 > {{community.title}} < /h2 >
+    </div>
+    <div class="date-time">
+        <h5>{{community.date.date}}</h5>
+        <h5>{{community.date.time}}</h5>
+    </div>
+    <div class="body">
+        <p>{{community.body}}</p>
+    </div>
+    <br>
+    <br>
+    <a href="{% url 'community:communityEdit' community.id %}">수정하기</a>
+    <a href="{% url 'community:communityDelete' community.id %}">삭제하기</a>
