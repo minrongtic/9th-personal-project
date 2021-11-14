@@ -1,0 +1,15 @@
+{% extends 'route/base-small-logo.html' %}
+{% load static %}
+{% block title %}
+    <title>Esainbolt | Community Board</title>
+{% endblock title %}
+{% block body-content %}
+    {% for community in communities.all %}
+    <div class="title">
+        <a href="{% url 'community:communityDetail' community.id %}">{{community.title}}</a>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+    <a href="{% url 'community:communityNew' %}">글 쓰기</a>
+{% endblock body-content %}

@@ -1,0 +1,19 @@
+{% extends 'route/base-small-logo.html' %}
+{% load static %}
+{% block title %}
+    <title>Esainbolt | Route Search</title>
+{% endblock title %}
+{% block body-content %}
+    <div class="search_bar">
+        <h3>검색어: <strong>{{ query }}</strong></h3>
+    </div>
+    {% if routes_list %}
+    {% for route in routes_list %}
+    <div class="search_result">
+        <a href="/route/{{route.id}}">{{route.via}}</a>
+    </div>
+    {% endfor %}
+    {% elif query %}
+        <h5>검색 결과가 없습니다</h5>
+    {% endif %}
+{% endblock body-content %}

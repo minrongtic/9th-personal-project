@@ -1,0 +1,13 @@
+@font-face {
+    font-family: SF-Pro-Rounded-Regular;
+    src: url('../fonts/SF-Pro-Rounded-Regular.otf');
+
+}
+
+.logo img {
+    display: block;
+    margin: -20px auto;
+    object-fit:contain;
+    width: 430px;
+    height: 280px;
+}
