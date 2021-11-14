@@ -5,11 +5,22 @@
 {% endblock title %}
 {% block body-content %}
     {% for community in communities.all %}
-    <div class="title">
-        <a href="{% url 'community:communityDetail' community.id %}">{{community.title}}</a>
+    <div class="row col-8 mx-auto">
+        <div class="list-group list-group-horizontal-sm mb-2 mt-2">
+            <a href="{% url 'community:communityDetail' community.id %}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="col-md-10 mx-auto" style="text-align: center;">
+                <div>
+                    <h6 class="mb-0">{{community.title}}</h6>
+                </div>
+            </div>
+            </a>
+        </div>
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     </div>
     {% endfor %}
     <br>
     <br>
-    <a href="{% url 'community:communityNew' %}">글 쓰기</a>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-success btn-lg px-4 me-sm-3" onclick="location.href='{% url 'community:communityNew' %}'">글 쓰기</button>
+    </div>
 {% endblock body-content %}
