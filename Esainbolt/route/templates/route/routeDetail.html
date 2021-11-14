@@ -4,13 +4,17 @@
     <title>Esainbolt | Route Detail</title>
 {% endblock title %}
 {% block body-content %}
-    <div class="fin">
-        <h2>도착지: {{route.fin}}</h2>
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-0">
+      <h1 class="display-6 fw-bold">{{route.fin}}</h1>
+      <p class="col-md-12">
+        <h4>{{route.via}}</h4>
+        <br>
+        {{route.etc|linebreaks}}
+      </p>
+      <br>
+      <button class="btn btn-success btn-md" type="button" onclick="location.href='{% url 'route:routeBoard' %}'">돌아가기</button>
     </div>
-    <div class="via">
-        <p>가는 방법: {{route.via}}</p>
-    </div>
-    <div class="etc">
-        <p>비고: {{route.etc|linebreaks}}</p>
-    </div>
+  </div>
 {% endblock body-content %}

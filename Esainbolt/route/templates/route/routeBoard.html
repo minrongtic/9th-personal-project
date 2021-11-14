@@ -5,17 +5,20 @@
 {% endblock title %}
 {% block body-content %}
     {% for route in routes.all %}
-    <div class="row mb-2">
+    <div class="row mb-2 mt-2">
         <div class="col-md-10" style="float:none; margin:0 auto">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-success">Route</strong>
+                    <strong class="d-inline-block mb-2 text-success">도착지</strong>
                     <h3 class="mb-2">{{route.fin}}</h3>
                     <p class="card-text mb-auto">{{route.via}}</p>
                     <br><br>
-                    <a href="{% url 'route:routeDetail' route.id %}" class="stretched-link">more detail</a>
+                    <div>
+                    <button class="btn btn-success btn-md" type="button" onclick="location.href='{% url 'route:routeDetail' route.id %}'">자세히 보기</button>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
     {% endfor %}
