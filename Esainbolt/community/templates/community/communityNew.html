@@ -4,14 +4,20 @@
     <title>Esainbolt | Community New Posting</title>
 {% endblock title %}
 {% block body-content %}
-    <div class="newposting">
-        <h3>새로운 글 작성하기</h3>
+<div class="row g-5">
+    <div class="mx-auto mt-5 col-md-10"">
+        <h5><div class="badge rounded-pill bg-secondary text-wrap mb-2 py-1.5" style="text-align: left;">
+            Esainbolt | Community 게시글 작성하기
+        </h5>
+        <hr>
+        <form action="{% url 'community:communityCreate' %}" method="post" style="text-align: center;">
+            {% csrf_token %}
+            <article class="blog-post">
+                <h4 class="blog-post-title pt-2 mb-2"><input type="text" name="title" id="" placeholder="제목을 입력해주세요." style="width:580px; height:48px;"></h4>
+                <p class="fs-6 py-3"><textarea name="body" id="" cols="100" rows="10" placeholder="내용을 입력해주세요."></textarea></p>
+            </article>
+            <button type="submit" class="btn btn-success btn-lg px-4 me-sm-3 mb-5">완료</button>
+        </form> 
     </div>
-    <form action="{% url 'community:communityCreate' %}" method="post">
-        {% csrf_token %}
-        <p>Title:<input type="text" name="title" id=""></p>
-        <p>Content: <br>
-            <textarea name="body" id="" cols="50" rows="30"></textarea></p>
-        <button type="submit">완료</button>
-    </form>
+</div>
 {% endblock body-content %}

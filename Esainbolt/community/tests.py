@@ -82,3 +82,17 @@ from django.test import TestCase
     <br>
     <a href="{% url 'community:communityEdit' community.id %}">수정하기</a>
     <a href="{% url 'community:communityDelete' community.id %}">삭제하기</a>
+
+# community New
+
+    <div class="newposting">
+        <h3>새로운 글 작성하기</h3>
+    </div>
+    <form action="{% url 'community:communityCreate' %}" method="post">
+        {% csrf_token %}
+        <p>Title:<input type="text" name="title" id=""></p>
+        <p>Content: <br>
+            <textarea name="body" id="" cols="50" rows="30"></textarea></p>
+        <button type="submit">완료</button>
+    </form>
+{% endblock body-content %}
