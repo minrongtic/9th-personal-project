@@ -4,16 +4,32 @@
     <title>Esainbolt | Route Search</title>
 {% endblock title %}
 {% block body-content %}
-    <div class="search_bar">
-        <h3>검색어: <strong>{{ query }}</strong></h3>
-    </div>
+<div class="px-4 mt-0 mb-5 text-center">
+    <h1 class="display-6">검색어: <strong>{{ query }}</strong></h1>
+</div>
     {% if routes_list %}
     {% for route in routes_list %}
-    <div class="search_result">
-        <a href="/route/{{route.id}}">{{route.via}}</a>
+    <div class="row mb-2 mt-2">
+        <div class="col-md-10" style="float:none; margin:0 auto">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">도착지</strong>
+                    <h3 class="mb-2">{{route.fin}}</h3>
+                    <p class="card-text mb-auto">{{route.via}}</p>
+                    <br><br>
+                    <div>
+                    <button class="btn btn-success btn-md" type="button" onclick="location.href='{% url 'route:routeDetail' route.id %}'">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endfor %}
     {% elif query %}
-        <h5>검색 결과가 없습니다</h5>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">검색 결과가 없습니다.</p>
+        </div>
+    </div>
     {% endif %}
 {% endblock body-content %}
