@@ -4,14 +4,20 @@
     <title>Esainbolt | Community Posting Edit</title>
 {% endblock title %}
 {% block body-content %}
-    <div class="editposting">
-        <h3>글 수정하기</h3>
+<div class="row g-5">
+    <div class="mx-auto mt-5 col-md-10"">
+        <h5><div class="badge rounded-pill bg-secondary text-wrap mb-2 py-1.5" style="text-align: left;">
+            Esainbolt | Community 게시글 수정하기
+        </h5>
+        <hr>
+        <form action="{% url 'community:communityUpdate' community.id %}" method="post" style="text-align: center;">
+            {% csrf_token %}
+            <article class="blog-post">
+                <h5 class="blog-post-title pt-2 mb-2"><input type="text" name="title" id="" value="{{community.title}}" style="width:580px; height:45px;"></h5>
+                <p class="fs-6 py-3"><textarea name="body" id="" cols="100" rows="10">{{community.body}}</textarea></p>
+            </article>
+            <button type="submit" class="btn btn-success btn-lg px-4 me-sm-3 mb-5">수정 완료</button>
+        </form> 
     </div>
-    <form action="{% url 'community:communityUpdate' community.id %}" method="post">
-        {% csrf_token %}
-        <p>Title:<input type="text" name="title" value="{{community.title}}"></p>
-        <p>Content: <br>
-            <textarea name="body" id="" cols="50" rows="30">{{community.body}}</textarea></p>
-        <button type="submit">완료</button>
-    </form>
+</div>
 {% endblock body-content %}
