@@ -43,11 +43,11 @@ a:hover {
 .etc-login-form {
   color: #919191;
   padding: 10px 65px;
-  font-size: large;
+  font-size: medium;
 }
 .etc-login-form p {
   margin: -30px -10px;
-  font-size:large;
+  font-size:medium;
 }
 /*=== 4. Main Form ===*/
 .login-form-1 {
