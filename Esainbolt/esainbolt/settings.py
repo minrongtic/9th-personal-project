@@ -156,7 +156,12 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
 
 # Email Settings
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "esainbolt.official@gmail.com"
+EMAIL_HOST_PASSWORD = "qkycildzsvaakzyg"
 
 # Secret_Key Settings
 secret_file = os.path.join(BASE_DIR, 'secrets.json')  # secrets.json 파일 위치를 명시
