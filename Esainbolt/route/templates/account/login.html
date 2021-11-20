@@ -1,0 +1,55 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"id="bootstrap-css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Esainbolt | Login</title>
+    <link rel="stylesheet" type="text/css"href="{% static 'route/css/login.css' %}"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+</head>
+<body>
+    <div class="text-center" style="padding:50px 0">
+	<div class="logo">로그인</div>
+    {% for error in form.non_field_errors %}
+        <div class="form-error error-messages">{{ error }}</div>
+    {% endfor %}
+	<!-- Main Form -->
+	<div class="login-form-1">
+		<form id="login-form" class="text-left" method="post">
+			{% csrf_token %}
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<!-- <input type="email" class="form-control" id="lg_email" name="login" placeholder="이메일"> -->
+                        {{form.login|add_class:"form-control"|attr:"placeholder:이메일"|add_error_class:"error"}}
+                        {% for error in form.login.errors %}
+                            <div class="form-error error-messages">{{ error }}</div>
+                        {% endfor %}
+	            <!-- Main Form -->
+					</div>
+                    <div class="form-group">
+						<!-- <input type="password" class="form-control" id="lg_password" name="password" placeholder="비밀번호"> -->
+                        {{form.password|add_class:"form-control"|attr:"placeholder:비밀번호"|add_error_class:"error"}}
+                        {% for error in form.password.errors %}
+                        <div class="form-error error-messages">{{ error }}</div>
+                    {% endfor %}
+					</div>
+				</div>
+				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+			</div>
+			<div class="etc-login-form">
+				<p>아직 회원이 아니신가요? <a href="{% url 'account_signup' %}">회원가입</a></p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

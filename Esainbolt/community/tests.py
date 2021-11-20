@@ -96,3 +96,15 @@ from django.test import TestCase
         <button type="submit">완료</button>
     </form>
 {% endblock body-content %}
+
+# community Edit
+<div class="editposting">
+        <h3>글 수정하기</h3>
+    </div>
+    <form action="{% url 'community:communityUpdate' community.id %}" method="post">
+        {% csrf_token %}
+        <p>Title:<input type="text" name="title" value="{{community.title}}"></p>
+        <p>Content: <br>
+            <textarea name="body" id="" cols="50" rows="30">{{community.body}}</textarea></p>
+        <button type="submit">완료</button>
+    </form>

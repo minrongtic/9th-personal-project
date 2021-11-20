@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'route.apps.RouteConfig',
-    'search.apps.SearchConfig',
-    'community.apps.CommunityConfig',
-    'accounts.apps.AccountsConfig',
+    'route',
+    'search',
+    'community',
+    'accounts',
+    'widget_tweaks',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -151,6 +152,7 @@ ACCOUNT_EMAIL_VARIFICATION = "mandatory"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "account_email_confirmation_done"
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_email_confirmation_done"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
 
 # Email Settings
